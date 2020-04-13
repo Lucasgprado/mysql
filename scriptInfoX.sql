@@ -47,4 +47,7 @@ describe tbclientes;
 insert into tbclientes(nomecli,endcli,fonecli,emailcli)
 values('Linus Torvalds','Rua Tux, 2015','99999-9999','linus@linux.com');
 
+insert into tbclientes(nomecli,endcli,fonecli,emailcli)
+values('Lucas Gomes','Rua Senac, 2020','99999-9999','lucas@gmail.com');
+
 select * from tbclientes;
