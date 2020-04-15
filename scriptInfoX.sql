@@ -51,3 +51,31 @@ insert into tbclientes(nomecli,endcli,fonecli,emailcli)
 values('Lucas Gomes','Rua Senac, 2020','99999-9999','lucas@gmail.com');
 
 select * from tbclientes;
+
+use dbinfox;
+
+create table tbos(
+os int primary key auto_increment,
+data_os timestamp default current_timestamp,
+equipamento varchar(150) not null,
+defeito varchar(150) not null,
+serviço varchar(150),
+tecnico varchar(30),
+valor decimal(10,2),
+idcli int not null,
+foreign key(idcli) references tbclientes(idcli)
+);
+
+describe tbos;
+
+insert into tbos(equipamento,defeito,serviço,tecnico,valor,idcli)
+values('notebook','não liga','troca da fonte','zé','87.50','1');
+
+select * from tbos;
+
+select
+O.os,equipamento,defeito,serviço,valor
+Cnomecli,fonecli
+from tbos as O
+inner join tbclientes as C
+on (O.idcli = C.idcli);
